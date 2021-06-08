@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#main-container{
+    text-align: center;
+}
+
+.form-group{
+    margin: 0.5rem auto;
+}
+
+.form-content i{
+    font-size: 1.4rem;
+    margin-right: 5px;
+}
+
+.form-control{
+    width: 20%;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.rem auto;
+}
+
+.descipcion{
+    text-align: left;
+    width: 20%;
+    margin: auto 1rem;
+}
+
+.data{
+    font-weight: bold;
+}
+

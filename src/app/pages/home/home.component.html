@@ -1,0 +1,101 @@
+<div class="form-content">
+    <h3>Direcciones de envío</h3>
+    <form (ngSubmit)="OnSubmit(dataForm)"
+          #dataForm="ngForm">
+        <div class="form-group">
+            <i class="fas fa-users"></i>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Nombre"
+                   name="nombre"
+                   [(ngModel)]="data.nombres">
+        </div>
+        <div class="form-group">
+            <i class="fas fa-users"></i>
+            <input type="text"
+                   placeholder="Apellidos"
+                   class="form-control"
+                   name="apellido"
+                   [(ngModel)]="data.apellidos">
+        </div>
+        <div class="form-group">
+            <i class="fas fa-envelope-square"></i>
+            <input type="email"
+                   placeholder="Correo Electrónico"
+                   class="form-control"
+                   name="email"
+                   [(ngModel)]="data.email">
+        </div>
+        <div class="form-group">
+            <i class="fas fa-phone-square-alt"></i>
+            <input type="text"
+                   placeholder="Número de telefono"
+                   class="form-control"
+                   name="tel"
+                   [(ngModel)]="data.telefono">
+        </div>
+        <div class="form-group">
+            <i class="fas fa-street-view"></i>
+            <select class="form-control"
+                    name="postal"
+                    (change)="OnChange($event.target.value)"
+                    [(ngModel)]="data.postal">
+                    <option value="" selected disabled hidden>Seleccionar</option>
+                    <option>11000</option>
+                    <option>89000</option>
+            </select>
+        </div>
+        <div class="form-group" *ngIf="!MasdeUnaColonia">
+            <i class="fas fa-street-view"></i>
+            <input type="text"
+                   placeholder="Colonia"
+                   class="form-control"
+                   name="colonia"
+                   [(ngModel)]="data.colonia[0]">
+        </div>
+        <div class="form-group" *ngIf="MasdeUnaColonia">
+            <i class="fas fa-street-view"></i>
+            <select class="form-control"
+                    name="colonia">
+                    <option *ngFor="let item of data.colonia;">
+                    {{ item }}
+                    </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <i class="fas fa-street-view"></i>
+            <input type="text"
+                   placeholder="Estado/region"
+                   class="form-control"
+                   name="region"
+                   [(ngModel)]="data.region">
+        </div>
+        <div class="form-group">
+            <i class="fas fa-street-view"></i>
+            <input type="text"
+                   placeholder="Ciudad"
+                   class="form-control"
+                   name="ciudad"
+                   [(ngModel)]="data.ciudad">
+        </div>
+        <div class="form-group">
+            <i class="fas fa-street-view"></i>
+            <input type="text"
+                   placeholder="Delegación o municipio"
+                   class="form-control"
+                   name="municipio"
+                   [(ngModel)]="data.municipio">
+        </div>
+        <div class="form-group">
+            <i class="fas fa-street-view"></i>
+            <input type="text"
+                   placeholder="Calle"
+                   class="form-control"
+                   name="calle"
+                   [(ngModel)]="data.calle">
+        </div>
+        <div class="form-group">
+            <button class="submit">Salvar</button>
+        </div>
+    </form>
+</div>
